@@ -1,0 +1,35 @@
+ALGORITHM prob1_sol1
+VAR
+set1,set2: ARRAY_OF INTEGER[];
+i,j,sum,x:INTEGER;
+BEGIN
+sum:=0;
+x:=0;
+FOR i FROM 0 TO set1.length-1 STEP   DO
+j:=0;
+WHILE (j<set2.length-1) DO
+    IF (set1[i]=set2[j]) THEN
+       x:=x+1
+    END_IF
+    j:=j+1
+    END WHILE
+    IF (x=0 AND (j=set2.length-1)) THEN
+       sum:=sum+set1[j];
+    END_IF
+   
+    
+END_FOR
+
+FOR j FROM 0 TO set2.length-1 STEP   DO
+i:=0;
+WHILE (i<set1.length-1) DO
+    IF (set2[j]=set1[i]) THEN
+       x:=x+1
+    END_IF
+    i:=i+1
+         END_WHILE
+    IF (x=0 AND (i=set1.length-1)) THEN
+       sum:=sum+set2[i];
+    END_IF
+     write("la somme est:"sum);
+END
